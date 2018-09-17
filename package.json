@@ -32,7 +32,9 @@
   "license": "MIT",
   "bugs": {},
   "homepage": "",
-  "dependencies": {},
+  "dependencies": {
+    "lodash": "^4.17.11"
+  },
   "devDependencies": {
     "eslint": "^5.5.0",
     "eslint-config-airbnb-base": "^13.1.0",
