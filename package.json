@@ -33,6 +33,7 @@
   "bugs": {},
   "homepage": "",
   "dependencies": {
+    "jasmine-check": "^1.0.0-rc.0",
     "lodash": "^4.17.11"
   },
   "devDependencies": {
@@ -55,6 +56,10 @@
     ],
     "env": {
       "jasmine": true
+    },
+    "globals": {
+      "check": false,
+      "gen": false
     }
   },
   "prettier": {
