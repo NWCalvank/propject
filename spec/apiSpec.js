@@ -1,5 +1,7 @@
 import Specify from '../src/index';
 
+const times = 10;
+
 const add = (x, y) => x + y;
 const add1 = x => x + 1;
 const subtract1 = x => x - 1;
@@ -48,7 +50,7 @@ describe('commutative property --', () => {
     it('should be present', () => {
       expect(subject.commutative).toBeDefined();
     });
-    subject.test();
+    subject.test({ times });
     // NOTE: this stopped working after refactoring Specify into a class
     /* tests.forEach(({ name, subject }) => {
     it(`${name} should have an implemented test`, () => {
@@ -68,7 +70,7 @@ describe('associative property --', () => {
     it('should be present', () => {
       expect(subject.associative).toBeDefined();
     });
-    subject.test();
+    subject.test({ times });
   });
 });
 
@@ -89,6 +91,6 @@ describe('isomorphism property --', () => {
     it('should be present', () => {
       expect(subject.isomorphism).toBeDefined();
     });
-    subject.test();
+    subject.test({ times });
   });
 });

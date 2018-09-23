@@ -1,8 +1,9 @@
 import { commutativity, associativity, isomorphic } from './properties';
 
 class Specify {
-  constructor(fn, { sig, n, commutative, associative, isomorphism }) {
+  constructor(fn, { times, sig, n, commutative, associative, isomorphism }) {
     this.fn = fn;
+    this.times = times;
     this.sig = sig;
     this.n = n;
     this.commutative = commutative;
@@ -11,18 +12,19 @@ class Specify {
   }
 
   test({
+    times = this.times,
     commutative = this.commutative,
     associative = this.associative,
     isomorphism = this.isomorphism,
   } = {}) {
     if (commutative !== undefined) {
-      return commutativity({ fn: this.fn, sig: this.sig }, commutative);
+      return commutativity({ times, fn: this.fn, sig: this.sig }, commutative);
     }
     if (associative !== undefined) {
-      return associativity({ fn: this.fn, sig: this.sig }, associative);
+      return associativity({ times, fn: this.fn, sig: this.sig }, associative);
     }
     if (isomorphism !== undefined) {
-      return isomorphic({ f: this.fn, g: isomorphism, sig: this.sig });
+      return isomorphic({ times, f: this.fn, g: isomorphism, sig: this.sig });
     }
     return false;
   }
